@@ -1,6 +1,20 @@
 from selenium import webdriver
 import time
 from openpyxl import load_workbook, Workbook
+from selenium.webdriver.chrome.options import Options
+import os
+
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chromedriver = "/usr/bin/chromedriver"
+os.environ["webdriver.chrome.driver"] = chromedriver
+
+
+
+
 
 zheng = 0
 jia = 0
@@ -84,7 +98,7 @@ def cs():
     c = 0
     cheng = 0
     while a > 0:
-        d = webdriver.Firefox(options=options)
+        d = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
         # d = webdriver.Chrome()
         d.implicitly_wait(5)
         dl(writeexcle(c), d)
