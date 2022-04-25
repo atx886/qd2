@@ -12,10 +12,9 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 chromedriver = "/usr/bin/chromedriver"
 os.environ["webdriver.chrome.driver"] = chromedriver
 
-
-
-
-
+file = './Spider/a.xlsx'
+max_a = load_workbook(file).active.max_row
+print(max_a)
 zheng = 0
 jia = 0
 
@@ -94,11 +93,11 @@ def qd(d):
 
 
 def cs():
-    a = 128
+    a = max_a
     c = 0
     cheng = 0
     while a > 0:
-        d = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+        d = webdriver.Chrome(chrome_options=chrome_options, executable_path=chromedriver)
         # d = webdriver.Chrome()
         d.implicitly_wait(5)
         dl(writeexcle(c), d)
