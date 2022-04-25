@@ -21,7 +21,7 @@ jia = 0
 
 
 def writeexcle(t):
-    file = 'a.xlsx'
+    file = '/usr/bin/a.xlsx'
     wb = load_workbook(file)
     sheet = wb.active
     max_row = sheet.max_row - t
@@ -38,10 +38,10 @@ def writeexcle(t):
         return None
 
 
-options = webdriver.FirefoxOptions()
+# options = webdriver.FirefoxOptions()
 # options.set_headless(True)
-options.add_argument("--headless")  # 设置火狐为headless无界面模式
-options.add_argument("--disable-gpu")
+# options.add_argument("--headless")  # 设置火狐为headless无界面模式
+# options.add_argument("--disable-gpu")
 # d = webdriver.Firefox(options=options)
 
 # d = webdriver.Firefox()
