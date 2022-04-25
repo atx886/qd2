@@ -21,7 +21,7 @@ jia = 0
 
 
 def writeexcle(t):
-    file = '/usr/bin/a.xlsx'
+    file = './Spider/a.xlsx'
     wb = load_workbook(file)
     sheet = wb.active
     max_row = sheet.max_row - t
